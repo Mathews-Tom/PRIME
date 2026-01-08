@@ -19,6 +19,7 @@ Example:
 
 from __future__ import annotations
 
+from prime.mcs.cluster import ClusterMember, MemoryCluster
 from prime.mcs.exceptions import (
     ClusterNotFoundError,
     ConfigurationError,
@@ -51,6 +52,7 @@ __all__ = [
     "HIGH_PRECISION_CONFIG",
     "MEMORY_EFFICIENT_CONFIG",
     "ClusterInfo",
+    "ClusterMember",
     "ClusterNotFoundError",
     "ConfigurationError",
     "ConsolidationError",
@@ -58,6 +60,7 @@ __all__ = [
     "IndexError",
     "MCSConfig",
     "MCSError",
+    "MemoryCluster",
     "MemoryReadInput",
     "MemoryReadResult",
     "MemoryWriteInput",
