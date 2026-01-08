@@ -67,6 +67,7 @@ source = ["src"]
 omit = [
     "*/tests/*",
     "*/__pycache__/*",
+    "*/qdrant_index.py",  # Integration code, requires running Qdrant
 ]
 
 [tool.coverage.report]
