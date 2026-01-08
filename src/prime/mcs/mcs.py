@@ -295,6 +295,59 @@ class MemoryClusterStore:
             representative_content=cluster.representative_content[:200],
         )
 
+    def get_cluster_info(self, cluster_id: int) -> ClusterInfo | None:
+        """Get information about a specific cluster (returns None if not found).
+
+        Unlike get_cluster(), this method returns None instead of raising
+        an exception when the cluster doesn't exist.
+
+        Args:
+            cluster_id: ID of the cluster to retrieve.
+
+        Returns:
+            ClusterInfo if found, None otherwise.
+        """
+        if cluster_id not in self._clusters:
+            return None
+
+        cluster = self._clusters[cluster_id]
+        cluster.touch()
+
+        return ClusterInfo(
+            cluster_id=cluster.cluster_id,
+            size=cluster.size,
+            is_consolidated=cluster.is_consolidated,
+            prototype_norm=float(np.linalg.norm(cluster.prototype)),
+            creation_timestamp=cluster.created_at,
+            last_access_timestamp=cluster.last_accessed_at,
+            access_count=cluster.access_count,
+            representative_content=cluster.representative_content[:200],
+        )
+
+    def list_clusters(self) -> list[ClusterInfo]:
+        """List all clusters in the store.
+
+        Returns:
+            List of ClusterInfo for all clusters.
+        """
+        result: list[ClusterInfo] = []
+
+        for cluster in self._clusters.values():
+            result.append(
+                ClusterInfo(
+                    cluster_id=cluster.cluster_id,
+                    size=cluster.size,
+                    is_consolidated=cluster.is_consolidated,
+                    prototype_norm=float(np.linalg.norm(cluster.prototype)),
+                    creation_timestamp=cluster.created_at,
+                    last_access_timestamp=cluster.last_accessed_at,
+                    access_count=cluster.access_count,
+                    representative_content=cluster.representative_content[:200],
+                )
+            )
+
+        return result
+
     def get_stats(self) -> dict[str, Any]:
         """Get overall store statistics.
 
