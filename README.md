@@ -41,13 +41,13 @@ Traditional RAG:  Query → Embed → Search Every Time → Retrieve → Generat
 
 ```bash
 # Basic install
-pip install prime
+pip install prime-rag
 
 # With all optional dependencies
-pip install prime[all]
+pip install prime-rag[all]
 
 # Development install from source
-git clone https://github.com/AetherForge/PRIME.git
+git clone https://github.com/Mathews-Tom/PRIME.git
 cd PRIME
 uv sync
 ```

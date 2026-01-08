@@ -1,12 +1,13 @@
 [project]
-name = "prime"
+name = "prime-rag"
 version = "0.1.0"
 description = "Predictive Retrieval with Intelligent Memory Embeddings"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.12"
 authors = [{ name = "AetherForge" }]
-keywords = ["rag", "retrieval", "embeddings", "jepa", "memory"]
+keywords = ["rag", "retrieval", "embeddings", "jepa", "memory", "predictive", "llm"]
+
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -43,6 +44,12 @@ all = [
     "sentence-transformers>=2.7.0",
     "faiss-cpu>=1.8.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/Mathews-Tom/PRIME"
+Documentation = "https://github.com/Mathews-Tom/PRIME#readme"
+Repository = "https://github.com/Mathews-Tom/PRIME.git"
+Issues = "https://github.com/Mathews-Tom/PRIME/issues"
 
 [build-system]
 requires = ["hatchling"]
