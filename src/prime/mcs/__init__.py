@@ -30,6 +30,7 @@ from prime.mcs.exceptions import (
     WriteError,
 )
 from prime.mcs.index import IndexSearchResult, SparseVector, VectorIndex
+from prime.mcs.mcs import MemoryClusterStore
 from prime.mcs.mcs_config import (
     COMPACT_CONFIG,
     DEFAULT_CONFIG,
@@ -38,6 +39,7 @@ from prime.mcs.mcs_config import (
     MCSConfig,
 )
 from prime.mcs.qdrant_index import QdrantIndex
+from prime.mcs.sparse import BM25Tokenizer, rrf_fusion
 from prime.mcs.types import (
     ClusterInfo,
     ConsolidationResult,
@@ -50,20 +52,22 @@ from prime.mcs.types import (
 
 __all__ = [
     "COMPACT_CONFIG",
+    "DEFAULT_CONFIG",
+    "HIGH_PRECISION_CONFIG",
+    "MEMORY_EFFICIENT_CONFIG",
+    "BM25Tokenizer",
     "ClusterInfo",
     "ClusterMember",
     "ClusterNotFoundError",
     "ConfigurationError",
     "ConsolidationError",
     "ConsolidationResult",
-    "DEFAULT_CONFIG",
-    "HIGH_PRECISION_CONFIG",
     "IndexError",
     "IndexSearchResult",
     "MCSConfig",
     "MCSError",
-    "MEMORY_EFFICIENT_CONFIG",
     "MemoryCluster",
+    "MemoryClusterStore",
     "MemoryReadInput",
     "MemoryReadResult",
     "MemoryWriteInput",
@@ -74,4 +78,5 @@ __all__ = [
     "SparseVector",
     "VectorIndex",
     "WriteError",
+    "rrf_fusion",
 ]

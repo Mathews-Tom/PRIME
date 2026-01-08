@@ -84,6 +84,12 @@ class MCSConfig(BaseModel):
         default=True,
         description="Enable BM25 + vector hybrid search",
     )
+    sparse_vocab_size: int = Field(
+        default=30000,
+        ge=1000,
+        le=100000,
+        description="Maximum vocabulary size for BM25 sparse vectors",
+    )
     sparse_weight: float = Field(
         default=0.3,
         ge=0.0,
