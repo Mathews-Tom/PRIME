@@ -38,6 +38,7 @@ from prime.mcs.mcs_config import (
     MEMORY_EFFICIENT_CONFIG,
     MCSConfig,
 )
+from prime.mcs.memory_index import MemoryIndex
 from prime.mcs.qdrant_index import QdrantIndex
 from prime.mcs.sparse import BM25Tokenizer, rrf_fusion
 from prime.mcs.types import (
@@ -68,6 +69,7 @@ __all__ = [
     "MCSError",
     "MemoryCluster",
     "MemoryClusterStore",
+    "MemoryIndex",
     "MemoryReadInput",
     "MemoryReadResult",
     "MemoryWriteInput",
