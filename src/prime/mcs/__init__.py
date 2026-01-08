@@ -29,6 +29,7 @@ from prime.mcs.exceptions import (
     SearchError,
     WriteError,
 )
+from prime.mcs.index import IndexSearchResult, SparseVector, VectorIndex
 from prime.mcs.mcs_config import (
     COMPACT_CONFIG,
     DEFAULT_CONFIG,
@@ -36,6 +37,7 @@ from prime.mcs.mcs_config import (
     MEMORY_EFFICIENT_CONFIG,
     MCSConfig,
 )
+from prime.mcs.qdrant_index import QdrantIndex
 from prime.mcs.types import (
     ClusterInfo,
     ConsolidationResult,
@@ -48,24 +50,28 @@ from prime.mcs.types import (
 
 __all__ = [
     "COMPACT_CONFIG",
-    "DEFAULT_CONFIG",
-    "HIGH_PRECISION_CONFIG",
-    "MEMORY_EFFICIENT_CONFIG",
     "ClusterInfo",
     "ClusterMember",
     "ClusterNotFoundError",
     "ConfigurationError",
     "ConsolidationError",
     "ConsolidationResult",
+    "DEFAULT_CONFIG",
+    "HIGH_PRECISION_CONFIG",
     "IndexError",
+    "IndexSearchResult",
     "MCSConfig",
     "MCSError",
+    "MEMORY_EFFICIENT_CONFIG",
     "MemoryCluster",
     "MemoryReadInput",
     "MemoryReadResult",
     "MemoryWriteInput",
     "MemoryWriteResult",
+    "QdrantIndex",
     "SearchError",
     "SearchMode",
+    "SparseVector",
+    "VectorIndex",
     "WriteError",
 ]
